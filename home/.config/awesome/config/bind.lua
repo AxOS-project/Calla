@@ -1,5 +1,7 @@
 local awful = require("awful")
 local mod = user.mod
+local hotkeys_popup = require("awful.hotkeys_popup")
+
 
 -- Mouse 
 
@@ -28,21 +30,14 @@ awful.keyboard.append_global_keybindings({
 	-- Awesome
 
 	awful.key(
-		{ mod, "Shift" }, "r", 
+		{ mod }, "F1", 
+			function() hotkeys_popup.show_help() end, 
+		{description="show this help window", group="awesome"}),
+
+	awful.key(
+		{ mod, "Shift", "Ctrl" }, "r", 
 			awesome.restart,
 		{ description = "reload awesome", group = "awesome" }
-	),
-	awful.key(
-		{ mod }, "z", function() 
-			awful.layout.inc(1) 
-		end,
- 		{ description = "next layout", group = "awesome" }
-	),
-	awful.key(
-		{ mod, "Shift" }, "z", function() 
-			awful.layout.inc(-1) 
-		end,
- 		{ description = "previous layout", group = "awesome" }
 	),
     awful.key(
 		{ mod }, "Tab", function() 
@@ -50,20 +45,14 @@ awful.keyboard.append_global_keybindings({
 		end,
         { description = "next window", group = "awesome" }
     ),
+	--awful.key(
+	--	{ mod }, "space", function() 
+	--		awesome.emit_signal("widget::menu") 
+	--	end,
+	--	{ description = "show menu", group = "awesome" }
+	--),
     awful.key(
-		{ mod, "Shift" }, "Tab", function() 
-			awful.client.focus.byidx(-1) 
-		end,
-		{ description = "previous window", group = "awesome" }
-    ),
-	awful.key(
-		{ mod }, "space", function() 
-			awesome.emit_signal("widget::menu") 
-		end,
-		{ description = "show menu", group = "awesome" }
-	),
-    awful.key(
-		{ mod }, "d", function() 
+		{ mod }, "a", function() 
 			awesome.emit_signal("widget::launcher")
 		end,
         { description = "show launcher", group = "awesome" }
@@ -75,7 +64,7 @@ awful.keyboard.append_global_keybindings({
         { description = "show config", group = "awesome" }
 	),
     awful.key(
-		{ mod }, "BackSpace", function() 
+		{ mod }, "l", function() 
 			awesome.emit_signal("widget::lockscreen")
 		end,
         { description = "lock screen", group = "awesome" }
@@ -109,12 +98,6 @@ awful.keyboard.append_global_keybindings({
 			awesome.emit_signal("util::screenshot", { args = "-u", time = "0" }) 
 		end,
         { description = "full screen", group = "screenshot" }
-	),
-	awful.key(
-		{ mod, "Control" }, "Print", function()
-			awesome.emit_signal("util::screenshot", { args = "-u", time = "5" }) 
-		end,
-        { description = "full screen delay", group = "screenshot" }
 	),
 	awful.key(
 		{ mod, "Shift" }, "Print", function() 
@@ -226,7 +209,7 @@ client.connect_signal("request::default_keybindings", function()
 			{ description = "center window", group = "client" }
 		),
         awful.key(
-			{ mod }, "f",
+			{}, "F11",
             function(c)
                 c.fullscreen = not c.fullscreen
                 c:raise()
@@ -234,19 +217,12 @@ client.connect_signal("request::default_keybindings", function()
             { description = "toggle fullscreen", group = "client" }
 		),
 	    awful.key(
-			{ mod }, "s", 
+			{ mod }, "space", 
 			function(c)
 				c.floating = not c.floating
 				c:raise()
 			end,
         	{ description = "toggle floating", group = "client" }
-		),
-	    awful.key(
-			{ mod }, "n", 
-			function(c)
-				client.focus.minimized = true
-			end,
-        	{ description = "minimize", group = "client" }
 		),
 	    awful.key(
 			{ mod }, "m", 
@@ -256,17 +232,8 @@ client.connect_signal("request::default_keybindings", function()
 			end,
         	{ description = "toggle maximize", group = "client" }
 		),
-	    awful.key(
-			{ mod }, "b", 
-			function(c)
-				c.sticky = not c.sticky
-				c.above = not c.above
-				c:raise()
-			end,
-        	{ description = "toggle sticky", group = "client" }
-		),
 		awful.key(
-			{ mod, "Shift" }, "q", function(c) 
+			{ mod }, "q", function(c) 
 				c:kill() 
 			end,
  			{ description = "close", group = "client" }
