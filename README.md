@@ -1,4 +1,5 @@
 <h1 align=center>Calla</h1>
+<h3 align=center>By <a href="https://github.com/Stardust-kyun">Stardust-kyun</a></h3>
 
 <div align="center">
 <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#gallery">Gallery</a> - <a href="#credit">Credit</a> - <a href="#contact">Contact</a>
@@ -130,6 +131,9 @@ Calla contains a settings app to configure itself without editing any files. It 
 
 ## Credit
 
+### Creator
+- [Stardust-kyun](https://github.com/Stardust-kyun)
+
 ### Thanks
 
 - [Sammy](https://github.com/TorchedSammy) for help understanding and adding live reloading.
@@ -155,7 +159,3 @@ Calla contains a settings app to configure itself without editing any files. It 
 ### Projects
 
 - [Phocus](https://github.com/phocus/gtk)
-
-## Contact
-
-You can find my contact information on my [website](https://star.is-a.dev/). I also have a [discord server](https://discord.gg/38hQb6V8AW) with help available and updates for when new features are added.
