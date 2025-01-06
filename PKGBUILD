@@ -8,7 +8,7 @@ depends=("xorg-server" "pipewire-pulse"
   "awesome-git" "picom" "maim"
   "papirus-icon-theme" "noto-fonts"
   "noto-fonts-cjk" "noto-color-emoji-fontconfig"
-  "noto-fonts-extra")
+  "noto-fonts-extra" "lua-pam-git")
 url="https://github.com/LeVraiArdox/calla"
 optdepends=("st: terminal",
   "vim-gtk3: vim with clipboard",
