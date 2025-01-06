@@ -3,7 +3,7 @@ local wibox = require("wibox")
 local gears = require("gears")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
-local pampath = require("gears").filesystem.get_configuration_dir() .. "liblua_pam.so"
+local pampath = "/usr/lib/lua-pam/liblua_pam.so"
 
 -- Authentication
 

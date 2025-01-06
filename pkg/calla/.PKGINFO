@@ -3,12 +3,12 @@
 pkgname = calla
 pkgbase = calla
 xdata = pkgtype=pkg
-pkgver = 5.0-1
+pkgver = 0.3-1
 pkgdesc = Calla desktop environement
 url = https://github.com/LeVraiArdox/calla
-builddate = 1736099367
+builddate = 1736149460
 packager = Unknown Packager
-size = 21555013
+size = 21555262
 arch = x86_64
 conflict = axskel-awesome
 depend = xorg-server
@@ -23,6 +23,7 @@ depend = noto-fonts
 depend = noto-fonts-cjk
 depend = noto-color-emoji-fontconfig
 depend = noto-fonts-extra
+depend = lua-pam-git
 optdepend = st: terminal,
 optdepend = vim-gtk3: vim with clipboard,
 optdepend = nemo: file manager,

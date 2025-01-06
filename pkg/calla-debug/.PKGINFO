@@ -3,10 +3,10 @@
 pkgname = calla-debug
 pkgbase = calla
 xdata = pkgtype=debug
-pkgver = 5.0-1
+pkgver = 0.3-1
 pkgdesc = Detached debugging symbols for calla
 url = https://github.com/LeVraiArdox/calla
-builddate = 1736099367
+builddate = 1736149460
 packager = Unknown Packager
 size = 4448
 arch = x86_64

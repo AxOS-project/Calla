@@ -1,6 +1,6 @@
 pkgname="calla"
 pkgver="0.3"
-pkgrel="1"
+pkgrel="2"
 pkgdesc="Calla desktop environement"
 arch=("x86_64")
 depends=("xorg-server" "pipewire-pulse"

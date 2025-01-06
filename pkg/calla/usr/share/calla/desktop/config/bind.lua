@@ -2,14 +2,6 @@ local awful = require("awful")
 local mod = user.mod
 local hotkeys_popup = require("awful.hotkeys_popup")
 
--- Help
-
-awful.key(
-	{mod}, "F1", function() 
-		hotkeys_popup.show_help() end, 
-	{description="show this help window", group="awesome"}
-)
-
 -- Mouse 
 
 client.connect_signal("request::default_mousebindings", function()
@@ -35,7 +27,12 @@ end)
 awful.keyboard.append_global_keybindings({
 
 	-- Awesome
-
+	awful.key(
+		{ mod }, "F1", function() 
+			hotkeys_popup.show_help()
+		end, 
+		{description="show this help window", group="awesome"}
+	),
 	awful.key(
 		{ mod, "Shift" }, "r", 
 			awesome.restart,
@@ -99,11 +96,24 @@ awful.keyboard.append_global_keybindings({
 		end,
         { description = "open a terminal", group = "programs" }
 	),
+	awful.key(
+		{ mod }, "e", function() 
+			awful.spawn.with_shell("nautilus") 
+		end,
+		{ description = "open a file manager", group = "programs" }
+	),
+	awful.key(
+		{ mod }, "w", function() 
+			awful.spawn.with_shell("firefox") 
+		end,
+		{ description = "open firefox", group = "programs" }
+	),
+
 
 	-- Screenshot
 
 	awful.key(
-		{ mod }, "Print", function() 
+		{ mod, "Shift" }, "Print", function() 
 			awesome.emit_signal("util::screenshot", { args = "-u", time = "0" }) 
 		end,
         { description = "full screen", group = "screenshot" }
@@ -115,7 +125,7 @@ awful.keyboard.append_global_keybindings({
         { description = "full screen delay", group = "screenshot" }
 	),
 	awful.key(
-		{ mod, "Shift" }, "Print", function() 
+		{ mod }, "Print", function() 
 			awesome.emit_signal("util::screenshot", { args = "-s -u", time = "0" }) 
 		end,
         { description = "part screen", group = "screenshot" }
@@ -264,7 +274,7 @@ client.connect_signal("request::default_keybindings", function()
         	{ description = "toggle sticky", group = "client" }
 		),
 		awful.key(
-			{ mod, "Shift" }, "q", function(c) 
+			{ mod }, "q", function(c) 
 				c:kill() 
 			end,
  			{ description = "close", group = "client" }
